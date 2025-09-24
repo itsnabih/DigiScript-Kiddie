@@ -24,7 +24,7 @@ void setup() {
   //   delay(30);
   // }
     for (int i=0; i<50; i++) {
-    ConsumerControl.press(CONSUMER_CONTROL_VOLUME_INCREMENT);
+    ConsumerControl.press(KEYBOARD_UP_ARROW);
     delay(50);
     ConsumerControl.release();
     delay(50);
