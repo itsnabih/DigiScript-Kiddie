@@ -3,25 +3,31 @@
 
 USBHIDKeyboard Keyboard;
 USBHID HID;
-#define KEY_UP     0x52
-#define KEY_DOWN   0x51
-#define KEY_LEFT   0x50
-#define KEY_RIGHT  0x4F
+// #define KEY_UP     0x52
+// #define KEY_DOWN   0x51
+// #define KEY_LEFT   0x50
+// #define KEY_RIGHT  0x4F
 
 void setup() {
   USB.begin();
   HID.begin();
   Keyboard.begin();
   delay(2000);
-  Keyboard.press(KEY_LEFT_GUI); // Win + R
-  Keyboard.press('r');
-  Keyboard.releaseAll();
-  delay(3000);
-  Keyboard.println("sndvol");
-  delay(2000);
-  for (int i=0; i<100; i++) {
-    Keyboard.write(KEY_UP);
-    delay(30);
+  // Keyboard.press(KEY_LEFT_GUI); // Win + R
+  // Keyboard.press('r');
+  // Keyboard.releaseAll();
+  // delay(3000);
+  // Keyboard.println("sndvol");
+  // delay(2000);
+  // for (int i=0; i<100; i++) {
+  //   Keyboard.write(KEY_UP);
+  //   delay(30);
+  // }
+    for (int i=0; i<50; i++) {
+    ConsumerControl.press(CONSUMER_CONTROL_VOLUME_INCREMENT);
+    delay(50);
+    ConsumerControl.release();
+    delay(50);
   }
 
   Keyboard.press(KEY_LEFT_GUI);
